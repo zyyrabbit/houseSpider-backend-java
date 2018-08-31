@@ -1,0 +1,23 @@
+server:
+  address: 127.0.0.1
+  port: 8080
+#spring配置
+spring:
+  #配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/house?useUnicode=true&characterEncoding=utf8
+    username: root
+    password: mysql520zyy
+    driver-class-name: com.mysql.jdbc.Driver
+  redis:
+        host: 127.0.0.1
+        port: 6379
+        password:
+        pool:
+          maxIdle: 300
+          maxActive: 600
+          maxWait: 1000
+          testOnBorrow: true
+mybatis:
+  typeAliasesPackage: com.zyy.house.spider.entity
+  mapperLocations: classpath:mapper/**/*.xml
