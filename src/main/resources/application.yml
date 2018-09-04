@@ -21,3 +21,5 @@ spring:
 mybatis:
   typeAliasesPackage: com.zyy.house.spider.entity
   mapperLocations: classpath:mapper/**/*.xml
+logging:
+  config: classpath:conf/spring-log4j2.xml

@@ -28,18 +28,35 @@
 	</properties>
 
 	<dependencies>
-
-		<!-- Spring Boot Redis 依赖 -->
+		<!--现在这样才能完全删除完整，或者会报日志冲突-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
-			<artifactId>spring-boot-starter-redis</artifactId>
-			<version>${spring-boot-starter-redis-version}</version>
+			<artifactId>spring-boot-starter</artifactId>
+			<exclusions>
+				<exclusion>
+					<groupId>org.springframework.boot</groupId>
+					<artifactId>spring-boot-starter-logging</artifactId>
+				</exclusion>
+			</exclusions>
 		</dependency>
 
 		<!--spring boot web依赖-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-web</artifactId>
+		</dependency>
+
+		<!--配置日志-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-log4j2</artifactId>
+		</dependency>
+
+		<!-- Spring Boot Redis 依赖 -->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-redis</artifactId>
+			<version>${spring-boot-starter-redis-version}</version>
 		</dependency>
 
 		<!-- Spring Boot Test 依赖 -->
@@ -54,6 +71,11 @@
 			<groupId>org.mybatis.spring.boot</groupId>
 			<artifactId>mybatis-spring-boot-starter</artifactId>
 			<version>${mybatis-spring-boot}</version>
+		</dependency>
+		<!--面向切面编程-->
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-starter-aop</artifactId>
 		</dependency>
 
 		<!-- MySQL 连接驱动依赖 -->
@@ -73,6 +95,5 @@
 			</plugin>
 		</plugins>
 	</build>
-
 
 </project>
